@@ -10,11 +10,11 @@ public class FileBufferedWriter01 {
         File file = new File("file.txt");
 
         try (FileWriter fw = new FileWriter(file, true);
-             BufferedWriter br = new BufferedWriter(fw)
+             BufferedWriter bufferedWriter = new BufferedWriter(fw)
         ) {
-            br.write("java é good");
-            br.newLine();
-            br.flush();
+            bufferedWriter.write("java é good");
+            bufferedWriter.newLine();
+            bufferedWriter.flush();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
